@@ -12,8 +12,6 @@ public class PhysicsMovement : MonoBehaviour {
     private void Awake() {
         _whiteCube = GameObject.Find("White_Cube");
         _rigidbody = GetComponent<Rigidbody>();
-
-        GameManager.instance.SpawnEnemy();
     }
 
     private void FixedUpdate() {
@@ -23,26 +21,9 @@ public class PhysicsMovement : MonoBehaviour {
         _rigidbody.velocity = new Vector3(horizontal, 0f, vertical) * speed;
     }
 
-    private void HideTheCube(GameObject obj) {
-        obj.SetActive(false);
-    }
-
-    private void ShowTheCube(GameObject obj) {
-        obj.SetActive(true);
-    }
-
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("I came to sensor's range.");
-        HideTheCube(_whiteCube);
-    }
-
-    private void OnTriggerStay(Collider other) {
-        Debug.Log("I'm in the sensor's range.");
-    }
-
-    private void OnTriggerExit(Collider other) {
-        Debug.Log("I'm out of the sensor.");
-        ShowTheCube(_whiteCube);
+        GameManager.instance.SpawnEnemyAtSpawnPositions();
+        other.gameObject.SetActive(false);
     }
 
 }

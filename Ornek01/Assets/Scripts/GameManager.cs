@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         if (instance == null)
             instance = this;
+    }
 
+    public void SpawnEnemyAtSpawnPositions() {
         SpawnEnemy(sp01.transform.position);
         SpawnEnemy(sp02.transform.position);
     }
