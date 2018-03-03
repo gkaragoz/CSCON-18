@@ -12,6 +12,8 @@ public class PhysicsMovement : MonoBehaviour {
     private void Awake() {
         _whiteCube = GameObject.Find("White_Cube");
         _rigidbody = GetComponent<Rigidbody>();
+
+        GameManager.instance.SpawnEnemy();
     }
 
     private void FixedUpdate() {
