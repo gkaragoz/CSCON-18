@@ -6,11 +6,9 @@ public class PhysicsMovement : MonoBehaviour {
 
     public float speed;
 
-    private GameObject _whiteCube;
     private Rigidbody _rigidbody;
 
     private void Awake() {
-        _whiteCube = GameObject.Find("White_Cube");
         _rigidbody = GetComponent<Rigidbody>();
     }
 

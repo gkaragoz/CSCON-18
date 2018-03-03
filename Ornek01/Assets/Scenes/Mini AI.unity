@@ -780,8 +780,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d6e832eeff4d2448d6d05c81b6bf54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sp01: {fileID: 1326060251}
-  sp02: {fileID: 417865842}
+  allSpawnPoints:
+  - {fileID: 1326060251}
+  - {fileID: 417865842}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   enemyPrefab: {fileID: 1888373800282448, guid: 2dc6bb9e86f06d947b48f210f6c2c913,
     type: 2}
 --- !u!1 &1256699451

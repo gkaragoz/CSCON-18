@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public GameObject sp01;
-    public GameObject sp02;
-
+    public List<GameObject> allSpawnPoints = new List<GameObject>();
     public GameObject enemyPrefab;
 
     public static GameManager instance;
@@ -17,8 +15,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void SpawnEnemyAtSpawnPositions() {
-        SpawnEnemy(sp01.transform.position);
-        SpawnEnemy(sp02.transform.position);
+        foreach (GameObject spawnPoint in allSpawnPoints) {
+            SpawnEnemy(spawnPoint.transform.position);
+        }
     }
 
     public void SpawnEnemy(Vector3 position) {
