@@ -14,6 +14,7 @@ public class TopDownPlayerController : MonoBehaviour {
     public void LookAtToMousePosition() {
         Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
@@ -21,6 +22,6 @@ public class TopDownPlayerController : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector2(horizontal, vertical) * movementSpeed * Time.deltaTime);
+        transform.position += new Vector3(horizontal, vertical, 0f) * movementSpeed * Time.deltaTime;
     }
 }
