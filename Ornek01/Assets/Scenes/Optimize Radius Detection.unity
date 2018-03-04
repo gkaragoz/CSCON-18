@@ -196,8 +196,9 @@ GameObject:
   - component: {fileID: 982361762}
   - component: {fileID: 982361761}
   - component: {fileID: 982361760}
+  - component: {fileID: 982361763}
   m_Layer: 0
-  m_Name: skeleton-move_3
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,6 +292,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &982361763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982361759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67f181ad60406d4391e7cef2914e391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1184120716
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +355,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.49
+  orthographic size: 3.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
