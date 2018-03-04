@@ -8,7 +8,8 @@ public class TopDownPlayerController : MonoBehaviour {
     public float projectileSpeed = 15f;
 
     public Transform projectile;
-    public Transform projectile_SP;
+    public Transform projectile_SP_Front;
+    public Transform projectile_SP_Back;
 
     public float movementSpeed = 3f;
 
@@ -36,7 +37,7 @@ public class TopDownPlayerController : MonoBehaviour {
     }
 
     public void Fire() {
-        GameObject obj = Instantiate(projectile, projectile_SP.position, Quaternion.identity).gameObject;
-        obj.GetComponent<Rigidbody2D>().velocity = (projectile_SP.position - transform.position) * projectileSpeed;
+        GameObject obj = Instantiate(projectile, projectile_SP_Front.position, Quaternion.identity).gameObject;
+        obj.GetComponent<Rigidbody2D>().velocity = (projectile_SP_Front.position - projectile_SP_Back.position) * projectileSpeed;
     }
 }
